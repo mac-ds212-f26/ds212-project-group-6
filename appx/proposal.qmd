@@ -1,12 +1,26 @@
 ---
-title: "Proposal"
+title: "Proposal - Democracy Throughout the Years"
 ---
+MEMBERS
+  Alara Yener
+  Andy Zhu
+  Ciara Xu
+  
+DESCRIPTION
+  Looking at the level of democracy across the world. Comparing the 1950 levels of democracy to the 2020 levels of democracy.  
 
-Looking at the level of democracy across the world. Comparing the 1950 levels of democracy to the 2020 levels of democracy.  
+QUESTIONS
 
-Team Members:
-Alara Yener
-Andy Zhu
-Ciara Xu
+DATASET
 
-Your proposal go here.
+COMMUNICATION
+  Google Chat
+
+ROLES
+  (1) point of contact–the main person to email the instructor/preceptors
+  (2) technical lead–the person who will oversee the code base and website 
+  (3) style lead–the person who will make sure the code is following the Guide
+
+CONFLICTS RESOLUTION
+
+PLAN
