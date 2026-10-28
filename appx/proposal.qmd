@@ -2,4 +2,9 @@
 title: "Proposal"
 ---
 
+Team Members:
+Alara Yener
+Andy Zhu
+Ciara Xu
+
 Your proposal go here.
