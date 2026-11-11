@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project Title",
+    "section": "",
+    "text": "Your report goes here.\n\n\nCode\n# a test code chunk",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Report</span>"
+    ]
+  },
+  {
+    "objectID": "eda/eda-member1.html",
+    "href": "eda/eda-member1.html",
+    "title": "Member 1 First Name & Last Name Initial",
+    "section": "",
+    "text": "Your exploratory data analysis of the team datasets go here.",
+    "crumbs": [
+      "EDA",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Member 1 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "eda/eda-member2.html",
+    "href": "eda/eda-member2.html",
+    "title": "Member 2 First Name & Last Name Initial",
+    "section": "",
+    "text": "Your exploratory data analysis of the team datasets go here.",
+    "crumbs": [
+      "EDA",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Member 2 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "eda/eda-member3.html",
+    "href": "eda/eda-member3.html",
+    "title": "Member 3 First Name & Last Name Initial",
+    "section": "",
+    "text": "Your exploratory data analysis of the team datasets go here.",
+    "crumbs": [
+      "EDA",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Member 3 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html",
+    "href": "appx/proposal.html",
+    "title": "Appendix A — Proposal - Democracy Throughout the Years",
+    "section": "",
+    "text": "MEMBERS Alara Yener Andy Zhu Ciara Xu\nDESCRIPTION Our project aims to visualize and analyze the relationship between countries, their political regime types, and population sizes. By comparing data from 1950 and 2000, we will explore how countries’ political systems and populations have changed over the 50-year period. Our goal is to identify patterns, trends, and potential relationships between population growth and changes in political regimes across different countries.\nQUESTIONS\n\nHow have political regime types across countries changed between1950 and 2000?\nWhat is the relationship between a country’s population size and its political regime type?\nHow have population sizes changed between countries with different political regime types from 1950 to 2000, and are there any noticeable patterns or trends?\n\nINSPIRATION\nOur team chose this topic because we have each experienced or grown up under different types of political regimes throughout our lifetimes. These personal experiences sparked our curiosity about how political systems differ across countries and how they evolve over time. We wanted to explore how government structures relate to population size and how these patterns have changed between 1950 and 2000. By combining our different perspectives with data visualization and analysis, we hope to better understand the relationship between population and political regimes around the world.\nDATASET\nDemocracy Data from tidy tuesday. https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-11-05/democracy_data.csv\nCOMMUNICATION Google Chat\nROLES (1) point of contact–the main person to email the instructor/preceptors - Alara (2) technical lead–the person who will oversee the code base and website - Andy (3) style lead–the person who will make sure the code is following the Guide - Ciara\nCONFLICTS RESOLUTION\nIf we have a conflict, the team member can tell the team first. We’ll first adjust the workload or deadline if possible. If the member misses a deadline without communicating, the team will contact them and redistribute urgent tasks to other team members so the project can continue. Repeated problems will be documented and discussed with Amin if necessary.\nThe team will try to make decisions through discussion. If the team is 50/50, each side will briefly explain its reasoning. If we still can’t agree, we’ll choose the option that best satisfies the assignment requirement. As a final solution, the team may use a majority vote, ask TA for feedback, or allow the person responsible for that part of the project to make the final decision.\nPLAN\nNov.6 PM2 due Nov. 13 PM3 due Nov.20 PM4 due Nov. 23 work on project Nov. 25&27 THANKSGIVING! Nov.30 PM5 due Dec. 4 & 7 work on project Dec. 9 PM6 Dec.14 PM7",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Proposal - Democracy Throughout the Years</span>"
+    ]
+  },
+  {
+    "objectID": "appx/case-study.html",
+    "href": "appx/case-study.html",
+    "title": "Appendix B — Case Study",
+    "section": "",
+    "text": "Your case study go here.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "wa/wa-member1.html",
+    "href": "wa/wa-member1.html",
+    "title": "Appendix C — Member 1 First Name & Last Name Initial",
+    "section": "",
+    "text": "Work area to try code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Member 1 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "wa/wa-member2.html",
+    "href": "wa/wa-member2.html",
+    "title": "Appendix D — Member 2 First Name & Last Name Initial",
+    "section": "",
+    "text": "Work area to try code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Member 2 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "wa/wa-member3.html",
+    "href": "wa/wa-member3.html",
+    "title": "Appendix E — Member 3 First Name & Last Name Initial",
+    "section": "",
+    "text": "Work area to try code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Member 3 First Name & Last Name Initial</span>"
+    ]
+  }
+]
