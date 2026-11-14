@@ -1,0 +1,23 @@
+---
+title: "Case Study"
+---
+
+Milestone 3: Case Study
+
+How the report unfolds the story:
+
+
+This article focuses on three main news networks CNN, MSNBC, and Fox. So for each spotlight the authors make it so that each one of these 3 networks are being compared in some way. We observed that with each new piece of information that the authors were focusing on the visualization shifted to highlight that thing. They use many effective visualization techniques that we will discuss below in order to form a narrative about how and why we see the use of certain words vary across network types and what is going on at the time of booms in the use of certain words. 
+
+This case study asks readers to think about where they usually get their news first. The author mentions several common news sources like newspapers, radio, Twitter, and television. This is effective because it connects the topic to what the reader is familiar with. The author first explains why news consumption matters before showing the data. Then, the author introduces the idea that people watching different news might receive different information about the same thing, which leads to the main question of the study: how do CNN, MSNBC, and Fox differ in their news coverage?
+
+The first graph author uses is a triangle graph to compare the words used by the three different news. Each triangle corner represents one network, and the position of each dot shows which networks are more inclined to that word relative to the others. Then, the article explores different topics like the Russia investigation, Clintons, and hurricanes. This shows how each network focuses on different topics. This is an effective way to use viz because the author explains the graph step by step clearly. The viz is also interactive,  which allows readers to explore the data themselves.
+
+Then they use a variety of density plots to visualize the use of a variety of different words over time across the different news platforms. These words include things like Flynn, Trump, and Anthem. Along with the visualization for each of the words there is a story that goes along with it, the author explains the reason behind there being peaks and valleys in the use of certain words. The majority of the time this has to do with a current event or tweet which makes the word particularly important at the time. The visualization is effective in that it is clear what we should be seeing, the axis are clearly labeled and even more then that the stories give us context as to why we are interested in this and why it is important. 
+
+Finally, they move from how often a topic appears to the context in which it appears. The bar charts compare the words that each network uses together with the same main word. For example, when discussing guns, Fox focuses mostly on “gun control,” while CNN and MSNBC use a wider variety of related words. The reader can also search for different words and switch between weighted ranking and raw counts. This is effective because it shows that the networks can discuss the same topic but frame it in very different ways. It also completes the story by moving from what the networks cover, to how long they cover it, and finally to how they describe it.
+
+## References
+
+- Smart, Charlie. 2018. "The Differences in How CNN, MSNBC, and FOX Cover the News." *The Pudding*. https://pudding.cool/2018/01/chyrons/.
+- Internet Archive. n.d. "Third Eye Data: TV News Archive Chyrons." https://archive.org/details/third-eye.
