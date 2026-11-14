@@ -20,4 +20,3 @@ Finally, they move from how often a topic appears to the context in which it app
 ## References
 
 - Smart, Charlie. 2018. "The Differences in How CNN, MSNBC, and FOX Cover the News." *The Pudding*. https://pudding.cool/2018/01/chyrons/.
-- Internet Archive. n.d. "Third Eye Data: TV News Archive Chyrons." https://archive.org/details/third-eye.
