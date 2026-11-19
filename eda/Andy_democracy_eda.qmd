@@ -1,0 +1,79 @@
+---
+title: "Member 1 First Name & Last Name Initial"
+---
+
+
+Your exploratory data analysis of the team datasets go here.
+```{r}
+library(tidyverse)
+democracy_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-11-05/democracy_data.csv')
+head(democracy_data)
+glimpse(democracy_data)
+summary(democracy_data)
+dim(democracy_data)
+```
+```{r}
+democracy_data |>
+  summarise(missing_country = sum(is.na(country_name)), missing_year = sum(is.na(year)), missing_regime = sum(is.na(regime_category)),
+    missing_democracy = sum(is.na(is_democracy)))
+```
+
+Political Regime Distribution in 1950 and 2000
+```{r}
+democracy_compare <- democracy_data |>
+  filter(year %in% c(1950, 2000))
+
+top_regimes <- democracy_compare |>
+  filter(!is.na(regime_category)) |>
+  count(regime_category, sort = TRUE) |>
+  slice_head(n = 6) |>
+  pull(regime_category)
+
+regime_plot_data <- democracy_compare |>
+  filter(!is.na(regime_category)) |>
+  mutate(regime_group = if_else(regime_category %in% top_regimes, regime_category, "Other")) |>
+  count(year, regime_group)
+```
+
+```{r}
+ggplot(regime_plot_data,
+       aes(x = regime_group, y = n)) +
+  geom_col(fill = "steelblue") +
+  facet_wrap(~ year) +
+  coord_flip() +
+  labs(title = "Political Regimes: 1950 vs 2000", x = "Regime Type", y = "Number of Country/Territory Records") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 10), axis.text.x = element_text(size = 10), plot.title = element_text( size = 14, face = "bold"))
+```
+This chart shows that political regime changed significantly between 1950 and 2000. In 1950, colonies were more common, but their number dropped dramatically by 2000. At the same time, parliamentary and presidential democracies became more common. Civilian dictatorships remains its major regime type in 2000. From 1950 to 2000, the world shift away from colonial rule and toward different forms of political government.
+
+
+Political Regime Changes from 1950 to 2000
+```{r}
+regime_changes <- democracy_compare |>
+  select(country_code, year, regime_category) |>
+  pivot_wider(names_from = year, values_from = regime_category, names_prefix = "regime_") |>
+  filter(!is.na(regime_1950), !is.na(regime_2000)) |>
+  mutate(changed = regime_1950 != regime_2000)
+regime_changes |>
+  count(changed)
+regime_changes |>
+  filter(changed == TRUE) |>
+  count(regime_1950, regime_2000, sort = TRUE)
+```
+155 countries or territories had different regime classifications in 1950 and 2000, while 53 remained in the same category. This suggests that political systems changed considerably during this 50-year period. But a change in regime category does not mean a transition to democracy. We also do not know whether a country has multiple political changes or not.
+
+Democracy Trends Over Time
+
+```{r}
+democracy_trend <- democracy_data |>
+  filter(year >= 1950, year <= 2000, !is.na(is_democracy)) |>
+  group_by(year) |>
+  summarise(democracy_percentage = mean(is_democracy) * 100, number_of_countries = n(), .groups = "drop")
+
+ggplot(democracy_trend, aes(x = year, y = democracy_percentage)) +
+  geom_line(color = "darkgreen", linewidth = 1) +
+  labs(title = "Percentage of Democracies (1950–2000)", x = "Year", y = "Democratic Countries (%)") +
+  theme_minimal()
+```
+This line graph shows that the percentage of countries classified as democracies between 1950 and 2000 was increased. The percentage rose from approximately 24% in 1950 to about 58% in 2000, with some fluctuations between this progress. The most noticeable increase are between 1980 to 1995. It can be seen that democracy became more widespread during this period.
