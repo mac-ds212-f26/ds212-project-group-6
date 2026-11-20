@@ -1,5 +1,108 @@
 ---
-title: "Member 3 First Name & Last Name Initial"
+title: "Ciara Xu - Exploratory Data Analysis"
 ---
 
-Your exploratory data analysis of the team datasets go here.
+## Question
+
+How were full suffrage and free and fair elections related to democracy in 1950 and 2000?
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+democracy_data <- read_csv(
+  "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-11-05/democracy_data.csv"
+)
+```
+
+## Look at the data
+
+```{r}
+dim(democracy_data)
+
+democracy_data %>%
+  select(country_name, year, is_democracy,
+         has_full_suffrage, has_free_and_fair_election) %>%
+  glimpse()
+```
+
+Each row is one country or territory in one year. I used 1950 and 2000 so I could compare the same variables at two different points in time.
+
+## Full suffrage
+
+```{r}
+suffrage_summary <- democracy_data %>%
+  filter(year %in% c(1950, 2000)) %>%
+  filter(!is.na(is_democracy), !is.na(has_full_suffrage)) %>%
+  mutate(democracy = if_else(is_democracy,
+                             "Democracy", "Non-democracy")) %>%
+  group_by(year, democracy) %>%
+  summarize(
+    countries = n(),
+    percent_full_suffrage = mean(has_full_suffrage) * 100,
+    .groups = "drop"
+  )
+
+suffrage_summary
+```
+
+```{r}
+ggplot(suffrage_summary,
+       aes(x = democracy, y = percent_full_suffrage,
+           fill = factor(year))) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Full suffrage became more common by 2000",
+    subtitle = "Percent of country or territory records with full suffrage",
+    x = NULL,
+    y = "Full suffrage (%)",
+    fill = "Year",
+    caption = "Source: Democracy Data, TidyTuesday 2024-11-05"
+  ) +
+  theme_minimal()
+```
+
+In 1950, about 71% of democratic records and 27% of non-democratic records had full suffrage. By 2000, all democratic records and about 89% of non-democratic records had full suffrage. Full suffrage became much more common, but it did not always mean that a country was classified as a democracy.
+
+## Free and fair elections
+
+```{r}
+election_summary <- democracy_data %>%
+  filter(year %in% c(1950, 2000)) %>%
+  filter(!is.na(is_democracy),
+         !is.na(has_free_and_fair_election)) %>%
+  mutate(democracy = if_else(is_democracy,
+                             "Democracy", "Non-democracy")) %>%
+  group_by(year, democracy) %>%
+  summarize(
+    countries = n(),
+    percent_free_fair = mean(has_free_and_fair_election) * 100,
+    .groups = "drop"
+  )
+
+election_summary
+```
+
+```{r}
+ggplot(election_summary,
+       aes(x = democracy, y = percent_free_fair,
+           fill = factor(year))) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Free and fair elections separate the two regime groups",
+    subtitle = "Percent of country or territory records with free and fair elections",
+    x = NULL,
+    y = "Free and fair elections (%)",
+    fill = "Year",
+    caption = "Source: Democracy Data, TidyTuesday 2024-11-05"
+  ) +
+  theme_minimal()
+```
+
+All democratic records in this comparison had free and fair elections. Only about 4.5% of non-democratic records did in 1950, and about 2.3% did in 2000. This difference is much larger than the difference for full suffrage.
+
+## Conclusion
+
+Voting rights expanded between 1950 and 2000, including in many places classified as non-democracies. However, free and fair elections remained strongly connected to the democracy classification. One limitation is that the data counts countries and territories equally. It does not include population, so these results are not weighted by the number of people living in each country.
