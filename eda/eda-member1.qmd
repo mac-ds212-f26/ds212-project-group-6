@@ -1,5 +1,57 @@
 ---
-title: "Member 1 First Name & Last Name Initial"
+title: "Member 1 Alara Yener"
 ---
 
 Your exploratory data analysis of the team datasets go here.
+
+democracy_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-11-05/democracy_data.csv')
+
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+library(scales)
+
+
+country_democracy <- democracy_data %>%
+  group_by(country_name) %>%
+  summarise(
+    democracy_percentage = mean(is_democracy, na.rm = TRUE) * 100,
+    .groups = "drop"
+  )
+
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+world_democracy <- world %>%
+  left_join(
+    country_democracy,
+    by = c("name" = "country_name")
+  )
+
+
+ggplot(world_democracy) +
+  geom_sf(aes(fill = democracy_percentage),
+          color = "white", linewidth = 0.1) +
+  scale_fill_gradientn(
+    colors = c("#B2182B", "#F4A582", "#FDDBC7",
+               "#D1E5F0", "#2166AC"),
+    values = rescale(c(0, 25, 50, 75, 100)),
+    limits = c(0, 100),
+    na.value = "grey90",
+    name = "Democracy (%)"
+  ) +
+  labs(
+    title = "Democracy Around the World",
+    subtitle = "Percentage of observed years classified as democratic (1950–2020)",
+    caption = "Source: TidyTuesday Democracy Data | Grey = No matched data",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 11),
+    plot.caption = element_text(color = "grey50"),
+    legend.position = "bottom",
+    legend.key.width = unit(2, "cm")
+  )
+
